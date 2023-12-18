@@ -49,7 +49,7 @@
 				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
 					<div class="form-group">
-						<img src="images/profile.jpg" alt="Payment Proceed" height="100px" />
+						<img src="images/payment.png" alt="Payment Proceed" height="100px" />
 						<h2 style="color: #002651;">Credit Card Payment</h2>
 					</div>
 				</div>
