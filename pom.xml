@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>shopping-cart</groupId>
-	<artifactId>shopping-cart</artifactId>
+	<groupId>store</groupId>
+	<artifactId>store</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>Shopping Cart</name>
-	<description>A Shopping Cart Project</description>
+	<name>Store</name>
+	<description>A Store Project</description>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>

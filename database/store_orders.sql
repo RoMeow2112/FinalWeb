@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `shopping-cart` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `shopping-cart`;
+CREATE DATABASE  IF NOT EXISTS `store` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `store`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: localhost    Database: shopping-cart
+-- Host: localhost    Database: store
 -- ------------------------------------------------------
 -- Server version	8.2.0
 
@@ -18,31 +18,31 @@ USE `shopping-cart`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user`
+-- Table structure for table `orders`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user` (
-  `email` varchar(60) NOT NULL,
-  `name` varchar(30) DEFAULT NULL,
-  `mobile` bigint DEFAULT NULL,
-  `address` varchar(250) DEFAULT NULL,
-  `pincode` int DEFAULT NULL,
-  `password` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`email`)
+CREATE TABLE `orders` (
+  `orderid` varchar(45) NOT NULL,
+  `prodid` varchar(45) NOT NULL,
+  `quantity` int DEFAULT NULL,
+  `amount` decimal(10,2) DEFAULT NULL,
+  `shipped` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`orderid`,`prodid`),
+  KEY `productid_idx` (`prodid`),
+  CONSTRAINT `productid` FOREIGN KEY (`prodid`) REFERENCES `product` (`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `orders`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('19110085@student.hcmute.edu.vn','Nguy&#7877;n',964659844,'62/10 Tân L&#7853;p 2 khu ph&#7889; 3 ph&#432;&#7901;ng Hi&#7879;p Phú',71206,'123'),('admin@gmail.com','Admin User',123,'123',123,'admin'),('nguyentrankhai123@gmail.com','Nguy&#7877;n',1234567,'62/10 Tân L&#7853;p 2 khu ph&#7889; 3 ph&#432;&#7901;ng Hi&#7879;p Phú',71206,'123');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-18  9:17:39
+-- Dump completed on 2023-12-18  9:45:57

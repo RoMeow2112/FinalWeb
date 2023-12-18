@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `shopping-cart` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `shopping-cart`;
+CREATE DATABASE  IF NOT EXISTS `store` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `store`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: localhost    Database: shopping-cart
+-- Host: localhost    Database: store
 -- ------------------------------------------------------
 -- Server version	8.2.0
 
@@ -18,31 +18,30 @@ USE `shopping-cart`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `transactions`
+-- Table structure for table `usercart`
 --
 
-DROP TABLE IF EXISTS `transactions`;
+DROP TABLE IF EXISTS `usercart`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `transactions` (
-  `transid` varchar(45) NOT NULL,
+CREATE TABLE `usercart` (
   `username` varchar(60) DEFAULT NULL,
-  `time` datetime DEFAULT NULL,
-  `amount` decimal(10,2) DEFAULT NULL,
-  PRIMARY KEY (`transid`),
-  KEY `truserid_idx` (`username`),
-  CONSTRAINT `transorderid` FOREIGN KEY (`transid`) REFERENCES `orders` (`orderid`),
-  CONSTRAINT `truserid` FOREIGN KEY (`username`) REFERENCES `user` (`email`)
+  `prodid` varchar(45) DEFAULT NULL,
+  `quantity` int DEFAULT NULL,
+  KEY `useremail_idx` (`username`),
+  KEY `prodidcart_idx` (`prodid`),
+  CONSTRAINT `prodidcart` FOREIGN KEY (`prodid`) REFERENCES `product` (`pid`),
+  CONSTRAINT `useremail` FOREIGN KEY (`username`) REFERENCES `user` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `transactions`
+-- Dumping data for table `usercart`
 --
 
-LOCK TABLES `transactions` WRITE;
-/*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
-/*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
+LOCK TABLES `usercart` WRITE;
+/*!40000 ALTER TABLE `usercart` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usercart` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-18  9:17:39
+-- Dump completed on 2023-12-18  9:45:57

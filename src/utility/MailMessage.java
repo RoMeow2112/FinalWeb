@@ -15,7 +15,7 @@ public class MailMessage {
 				+ "making us up to that level. We Deliver Product to your house with no extra delivery charges and we also have collection of most of the"
 				+ "branded items.<br><br>As a Welcome gift for our New Customers we are providing additional 10% OFF Upto 500 Rs for the first product purchase. "
 				+ "<br>To avail this offer you only have "
-				+ "to enter the promo code given below.<br><br><br> PROMO CODE: " + "ELLISON500<br><br><br>"
+				+ "to enter the promo code given below.<br><br><br> PROMO CODE: " + "NEWCUS50<br><br><br>"
 				+ "Have a good day!<br>" + "" + "</body>" + "</html>";
 		try {
 			JavaMailUtil.sendMail(recipient, subject, htmlTextMessage);
