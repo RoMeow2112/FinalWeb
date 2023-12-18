@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.User;
+import DAO.UserDAO;
 
 /**
  * Servlet implementation class UpdateProfileSrv
@@ -44,7 +45,10 @@ public class UpdateProfileSrv extends HttpServlet {
         user.setMobile(mobile);
         user.setAddress(address);
         user.setPinCode(pincode);
+        
+        UserDAO dao = new UserDAO();
 
+        dao.updateProfile(email, user);
 
 		RequestDispatcher rd = request
 				.getRequestDispatcher("userProfile.jsp");

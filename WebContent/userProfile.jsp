@@ -15,11 +15,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<script>
-    function updateProfile() {
-        window.location.href = "UpdateProfileSrv";
-    }
-</script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -77,13 +72,13 @@
 			<div class="col-lg-8">
 				<div class="card mb-4">
 					<div class="card-body">
-						<form action="UpdateProfileSrv" method="post">
+						<form action="./UpdateProfileSrv" method="post">
 							<div class="row">
 								<div class="col-sm-3">
 									<p class="mb-0">Full Name</p>
 								</div>
 								<div class="col-sm-9">
-									<input class="text-muted mb-0" name="name" value="<%=user.getName()%>" readonly>
+									<input class="text-muted mb-0" name="name" value="<%=user.getName()%>">
 								</div>
 							</div>
 							<hr>
@@ -92,7 +87,7 @@
 									<p class="mb-0">Email</p>
 								</div>
 								<div class="col-sm-9">
-									<input class="text-muted mb-0" name="email" value="<%=user.getEmail()%>">
+									<input class="text-muted mb-0" name="email" value="<%=user.getEmail()%>" readonly>
 								</div>
 							</div>
 							<hr>
@@ -128,7 +123,7 @@
 								</div>
 								<div class="col-sm-9">
 									<button
-									type="submit" name="Update" onclick="updateProfile()"
+									type="submit" 
 									style="max-width: 80px;">Update</button>
 								</div>
 							</div>
