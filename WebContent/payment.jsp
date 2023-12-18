@@ -16,7 +16,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color: #ace6f6;">
 
 	<%
 	/* Checking the user credentials */
@@ -50,7 +50,7 @@
 				<div style="font-weight: bold;" class="text-center">
 					<div class="form-group">
 						<img src="images/profile.jpg" alt="Payment Proceed" height="100px" />
-						<h2 style="color: green;">Credit Card Payment</h2>
+						<h2 style="color: #002651;">Credit Card Payment</h2>
 					</div>
 				</div>
 				<div class="row">

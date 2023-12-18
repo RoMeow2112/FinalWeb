@@ -14,7 +14,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color: #ace6f6;">
 	<%
 	/* Checking the user credentials */
 	String userType = (String) session.getAttribute("usertype");
@@ -46,7 +46,7 @@
 				class="col-md-4 col-md-offset-4"
 				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
-					<h3 style="color: green;">Product Deletion Form</h3>
+					<h3 style="color: #002651;">Product Deletion Form</h3>
 					<%
 					if (message != null) {
 					%>

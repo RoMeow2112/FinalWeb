@@ -16,9 +16,8 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color: #ace6f6;">
 	<%
-	/* Checking the user credentials */
 	String userType = (String) session.getAttribute("usertype");
 	String userName = (String) session.getAttribute("username");
 	String password = (String) session.getAttribute("password");
@@ -39,7 +38,7 @@
 	<jsp:include page="header.jsp" />
 
 	<div class="text-center"
-		style="color: green; font-size: 24px; font-weight: bold;">Stock
+		style="color: #002651; font-size: 24px; font-weight: bold;">Stock
 		Products</div>
 	<div class="container-fluid">
 		<div class="table-responsive ">

@@ -40,11 +40,10 @@ public class AddtoCart extends HttpServlet {
 			return;
 		}
 
-		// login Check Successfull
 
 		String userId = userName;
 		String prodId = request.getParameter("pid");
-		int pQty = Integer.parseInt(request.getParameter("pqty")); // 1
+		int pQty = Integer.parseInt(request.getParameter("pqty")); 
 
 		CartDAO cart = new CartDAO();
 

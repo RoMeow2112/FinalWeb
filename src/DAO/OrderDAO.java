@@ -32,9 +32,7 @@ public class OrderDAO implements OrderService {
 
 		String transactionId = transaction.getTransactionId();
 
-		// System.out.println("Transaction: "+transaction.getTransactionId()+"
-		// "+transaction.getTransAmount()+" "+transaction.getUserName()+"
-		// "+transaction.getTransDateTime());
+
 
 		for (Cart item : cartItems) {
 
@@ -124,7 +122,7 @@ public class OrderDAO implements OrderService {
 				flag = true;
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 
@@ -288,7 +286,6 @@ public class OrderDAO implements OrderService {
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

@@ -90,7 +90,6 @@ public class UserDAO implements UserService {
 				flag = true;
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -226,6 +225,39 @@ public class UserDAO implements UserService {
 		}
 
 		return userAddr;
+	}
+	
+	public String updateProfile(String email, User updatedUser) {
+	    String status = "Failed to Update Profile";
+
+	    Connection con = DBUtil.provideConnection();
+	    PreparedStatement ps = null;
+	    
+	    
+
+	    try {
+	        ps = con.prepareStatement("update user set name=?, mobile=?, address=?, pincode=? where email=?");
+
+	        ps.setString(1, updatedUser.getName());
+	        ps.setLong(2, updatedUser.getMobile());
+	        ps.setString(3, updatedUser.getAddress());
+	        ps.setInt(4, updatedUser.getPinCode());
+	        ps.setString(5, email);
+
+	        int k = ps.executeUpdate();
+
+	        if (k > 0) {
+	            status = "Profile Successfully Updated!";
+	        }
+	    } catch (SQLException e) {
+	        status = "Error: " + e.getMessage();
+	        e.printStackTrace();
+	    } finally {
+	        DBUtil.closeConnection(con);
+	        DBUtil.closeConnection(ps);
+	    }
+
+	    return status;
 	}
 
 }

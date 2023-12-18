@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Ellison Electronics</title>
+<title>K+ Store</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -16,10 +16,9 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color: #ace6f6;">
 
 	<%
-	/* Checking the user credentials */
 			String userName = (String) session.getAttribute("username");
 			String password = (String) session.getAttribute("password");
 			String userType = (String) session.getAttribute("usertype");

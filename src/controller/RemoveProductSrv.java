@@ -40,7 +40,7 @@ public class RemoveProductSrv extends HttpServlet {
 			response.sendRedirect("login.jsp?message=Session Expired, Login Again!!");
 		}
 
-		// login checked
+		
 
 		String prodId = request.getParameter("prodid");
 

@@ -18,12 +18,12 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color: #ace6f6;">
 	<!--Company Header Starting  -->
 	<div class="container-fluid text-center"
-		style="margin-top: 45px; background-color: #33cc33; color: white; padding: 5px;">
-		<h2>Ellison Electronics</h2>
-		<h6>We specialize in Electronics</h6>
+		style="margin-top: 45px; background-color: #4b89ac; color: white; padding: 5px;">
+		<h2>K+ Store</h2>
+		<h6>Everything you need!</h6>
 		<form class="form-inline" action="index.jsp" method="get">
 			<div class="input-group">
 				<input type="text" class="form-control" size="50" name="search"
@@ -40,7 +40,6 @@
 	<!-- Company Header Ending -->
 
 	<%
-	/* Checking the user credentials */
 	String userType = (String) session.getAttribute("usertype");
 	if (userType == null) { //LOGGED OUT
 	%>

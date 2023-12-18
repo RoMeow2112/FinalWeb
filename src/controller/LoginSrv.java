@@ -34,10 +34,10 @@ public class LoginSrv extends HttpServlet {
 
 		String status = "Login Denied! Invalid Username or password.";
 
-		if (userType.equals("admin")) { // Login as Admin
+		if (userType.equals("admin")) { 
 
 			if (password.equals("admin") && userName.equals("admin@gmail.com")) {
-				// valid
+				
 
 				RequestDispatcher rd = request.getRequestDispatcher("adminViewProduct.jsp");
 
@@ -50,19 +50,19 @@ public class LoginSrv extends HttpServlet {
 				rd.forward(request, response);
 
 			} else {
-				// Invalid;
+				
 				RequestDispatcher rd = request.getRequestDispatcher("login.jsp?message=" + status);
 				rd.include(request, response);
 			}
 
-		} else { // Login as customer
+		} else { 
 
 			UserDAO udao = new UserDAO();
 
 			status = udao.isValidCredential(userName, password);
 
 			if (status.equalsIgnoreCase("valid")) {
-				// valid user
+				
 
 				User user = udao.getUserDetails(userName, password);
 
@@ -79,7 +79,7 @@ public class LoginSrv extends HttpServlet {
 				rd.forward(request, response);
 
 			} else {
-				// invalid user;
+				
 
 				RequestDispatcher rd = request.getRequestDispatcher("login.jsp?message=" + status);
 

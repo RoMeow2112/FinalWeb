@@ -17,7 +17,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/changes.css">
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color: #ace6f6;">
 	<%
 	/* Checking the user credentials */
 	String userType = (String) session.getAttribute("usertype");
@@ -39,7 +39,7 @@
 	<jsp:include page="header.jsp" />
 
 	<div class="text-center"
-		style="color: green; font-size: 24px; font-weight: bold;">UnShipped
+		style="color: #002651; font-size: 24px; font-weight: bold;">UnShipped
 		Orders</div>
 	<div class="container-fluid">
 		<div class="table-responsive ">

@@ -1,5 +1,5 @@
 body {
-	background-color: #E6F9E6;
+	background-color: #ace6f6;
 }
 /* Add a dark background color with a little bit see-through */
 .navbar {
@@ -59,7 +59,7 @@ button {
 }
 
 button:hover {
-	background-color: green;
+	background-color: #002651;
 	color: white;
 	border: 1px solid red;
 	padding: 7px;
@@ -80,7 +80,7 @@ button:hover {
 }
 
 .products {
-	background-color: #E6F9E6 !important;
+	background-color: #ace6f6 !important;
 	padding: 20px;
 }
 
@@ -97,7 +97,7 @@ button:hover {
 }
 
 .productname {
-	color: green;
+	color: #002651;
 	font-size: 15px;
 	font-family: fantasy;
 }

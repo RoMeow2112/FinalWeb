@@ -23,5 +23,7 @@ public interface UserService {
 	public String getFName(String emailId);
 
 	public String getUserAddr(String userId);
+	
+	public String updateProfile(String email, User updatedUser);
 
 }

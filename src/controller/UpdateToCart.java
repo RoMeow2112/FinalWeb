@@ -40,7 +40,7 @@ public class UpdateToCart extends HttpServlet {
 			response.sendRedirect("login.jsp?message=Session Expired, Login Again!!");
 		}
 
-		// login Check Successfull
+		
 
 		String userId = userName;
 		String prodId = request.getParameter("pid");

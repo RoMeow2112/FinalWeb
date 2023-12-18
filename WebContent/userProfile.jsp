@@ -15,10 +15,15 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script>
+    function updateProfile() {
+        window.location.href = "UpdateProfileSrv";
+    }
+</script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color: #ace6f6;">
 
 	<%
 	/* Checking the user credentials */
@@ -57,7 +62,7 @@
 			<div class="col-lg-4">
 				<div class="card mb-4">
 					<div class="card-body text-center">
-						<img src="images/profile.jpg" class="rounded-circle img-fluid"
+						<img src="images/profileavatar.jpg" class="rounded-circle img-fluid"
 							style="width: 150px;">
 						<h5 class="my-3">
 							Hello
@@ -68,69 +73,66 @@
 						<p class="text-muted mb-4">Bay Area, San Francisco, CA</p> -->
 					</div>
 				</div>
-				<div class="card mb-4 mb-lg-0">
-					<div class="card-body p-0">
-						<ul class="list-group list-group-flush rounded-3">
-
-							<li
-								class="text-center list-group-item d-flex justify-content-between align-items-center p-3">
-								<h1>My Profile</h1>
-							</li>
-						</ul>
-					</div>
-				</div>
 			</div>
 			<div class="col-lg-8">
 				<div class="card mb-4">
 					<div class="card-body">
-						<div class="row">
-							<div class="col-sm-3">
-								<p class="mb-0">Full Name</p>
+						<form action="UpdateProfileSrv" method="post">
+							<div class="row">
+								<div class="col-sm-3">
+									<p class="mb-0">Full Name</p>
+								</div>
+								<div class="col-sm-9">
+									<input class="text-muted mb-0" name="name" value="<%=user.getName()%>" readonly>
+								</div>
 							</div>
-							<div class="col-sm-9">
-								<p class="text-muted mb-0"><%=user.getName()%></p>
+							<hr>
+							<div class="row">
+								<div class="col-sm-3">
+									<p class="mb-0">Email</p>
+								</div>
+								<div class="col-sm-9">
+									<input class="text-muted mb-0" name="email" value="<%=user.getEmail()%>">
+								</div>
 							</div>
-						</div>
-						<hr>
-						<div class="row">
-							<div class="col-sm-3">
-								<p class="mb-0">Email</p>
+							<hr>
+							<div class="row">
+								<div class="col-sm-3">
+									<p class="mb-0">Phone</p>
+								</div>
+								<div class="col-sm-9">
+									<input class="text-muted mb-0" name="mobile" value="<%=user.getMobile()%>">
+								</div>
 							</div>
-							<div class="col-sm-9">
-								<p class="text-muted mb-0"><%=user.getEmail()%>
-								</p>
+							<hr>
+							<div class="row">
+								<div class="col-sm-3">
+									<p class="mb-0">Address</p>
+								</div>
+								<div class="col-sm-9">
+									<input class="text-muted mb-0" name="address" value="<%=user.getAddress()%>">
+								</div>
 							</div>
-						</div>
-						<hr>
-						<div class="row">
-							<div class="col-sm-3">
-								<p class="mb-0">Phone</p>
+							<hr>
+							<div class="row">
+								<div class="col-sm-3">
+									<p class="mb-0">PinCode</p>
+								</div>
+								<div class="col-sm-9">
+									<input class="text-muted mb-0" name= "pincode" value="<%=user.getPinCode()%>">
+								</div>
 							</div>
-							<div class="col-sm-9">
-								<p class="text-muted mb-0"><%=user.getMobile()%>
-								</p>
+							<hr>
+							<div class="row">
+								<div class="col-sm-3">
+								</div>
+								<div class="col-sm-9">
+									<button
+									type="submit" name="Update" onclick="updateProfile()"
+									style="max-width: 80px;">Update</button>
+								</div>
 							</div>
-						</div>
-						<hr>
-						<div class="row">
-							<div class="col-sm-3">
-								<p class="mb-0">Address</p>
-							</div>
-							<div class="col-sm-9">
-								<p class="text-muted mb-0"><%=user.getAddress()%>
-								</p>
-							</div>
-						</div>
-						<hr>
-						<div class="row">
-							<div class="col-sm-3">
-								<p class="mb-0">PinCode</p>
-							</div>
-							<div class="col-sm-9">
-								<p class="text-muted mb-0"><%=user.getPinCode()%>
-								</p>
-							</div>
-						</div>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -142,6 +144,5 @@
 	<br>
 
 	<%@ include file="footer.html"%>
-
 </body>
 </html>

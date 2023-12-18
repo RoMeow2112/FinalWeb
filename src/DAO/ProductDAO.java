@@ -144,7 +144,6 @@ public class ProductDAO implements ProductService {
 				status = "Product Updated Successfully!";
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -234,7 +233,7 @@ public class ProductDAO implements ProductService {
 		ResultSet rs = null;
 
 		try {
-			ps = con.prepareStatement("SELECT * FROM `shopping-cart`.product where lower(ptype) like ?;");
+			ps = con.prepareStatement("SELECT * FROM `store`.product where lower(ptype) like ?;");
 			ps.setString(1, "%" + type + "%");
 			rs = ps.executeQuery();
 
@@ -276,7 +275,7 @@ public class ProductDAO implements ProductService {
 
 		try {
 			ps = con.prepareStatement(
-					"SELECT * FROM `shopping-cart`.product where lower(ptype) like ? or lower(pname) like ? or lower(pinfo) like ?");
+					"SELECT * FROM `store`.product where lower(ptype) like ? or lower(pname) like ? or lower(pinfo) like ?");
 			search = "%" + search + "%";
 			ps.setString(1, search);
 			ps.setString(2, search);
@@ -330,8 +329,7 @@ public class ProductDAO implements ProductService {
 				image = rs.getBytes("image");
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+				e.printStackTrace();
 		}
 
 		DBUtil.closeConnection(con);
@@ -368,8 +366,7 @@ public class ProductDAO implements ProductService {
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+				e.printStackTrace();
 		}
 
 		DBUtil.closeConnection(con);
@@ -405,10 +402,8 @@ public class ProductDAO implements ProductService {
 			ps.setString(6, prevProductId);
 
 			int k = ps.executeUpdate();
-			// System.out.println("prevQuantity: "+prevQuantity);
 			if ((k > 0) && (prevQuantity < updatedProduct.getProdQuantity())) {
 				status = "Product Updated Successfully!";
-				// System.out.println("updated!");
 				List<Demand> demandList = new DemandDAO().haveDemanded(prevProductId);
 
 				for (Demand demand : demandList) {
@@ -431,13 +426,11 @@ public class ProductDAO implements ProductService {
 				status = "Product Not available in the store!";
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		DBUtil.closeConnection(con);
 		DBUtil.closeConnection(ps);
-		// System.out.println("Prod Update status : "+status);
 
 		return status;
 	}
@@ -462,7 +455,6 @@ public class ProductDAO implements ProductService {
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -524,7 +516,6 @@ public class ProductDAO implements ProductService {
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

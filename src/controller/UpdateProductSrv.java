@@ -44,7 +44,7 @@ public class UpdateProductSrv extends HttpServlet {
 			return;
 		}
 
-		// Login success
+	
 
 		String prodId = request.getParameter("pid");
 		String prodName = request.getParameter("name");

@@ -16,7 +16,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color: #ace6f6;">
 	<%
 	/* Checking the user credentials */
 			String utype = (String) session.getAttribute("usertype");
@@ -51,7 +51,7 @@
 					<div class="form-group">
 						<img src="./ShowImage?pid=<%=product.getProdId()%>"
 							alt="Product Image" height="100px" />
-						<h2 style="color: green;">Product Update Form</h2>
+						<h2 style="color: #002651;">Product Update Form</h2>
 					</div>
 
 					<%

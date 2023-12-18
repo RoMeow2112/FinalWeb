@@ -16,10 +16,9 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color: #ace6f6;">
 
 	<%
-	/* Checking the user credentials */
 			String userName = (String) session.getAttribute("username");
 			String password = (String) session.getAttribute("password");
 			String userType = (String) session.getAttribute("usertype");
@@ -63,7 +62,7 @@
 	<div class="text-center"
 		style="color: black; font-size: 14px; font-weight: bold;"><%=message%></div>
 	<!-- Start of Product Items List -->
-	<div class="container" style="background-color: #E6F9E6;">
+	<div class="container" style="background-color: #ace6f6;">
 		<div class="row text-center">
 
 			<%
@@ -80,7 +79,7 @@
 					</p>
 					<p class="productinfo"><%=product.getProdInfo()%></p>
 					<p class="price">
-						Rs
+						$
 						<%=product.getProdPrice()%>
 					</p>
 					<form method="post">

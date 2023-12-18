@@ -43,7 +43,7 @@ public class CartDAO implements CartService {
 				int availableQty = product.getProdQuantity();
 
 				prodQty += cartQuantity;
-				//
+				
 				if (availableQty < prodQty) {
 
 					status = updateProductToCart(userId, prodId, availableQty);

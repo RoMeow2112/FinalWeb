@@ -18,10 +18,9 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="background-color: #E6F9E6;">
+<body style="background-color: #ace6f6;">
 
 	<%
-	/* Checking the user credentials */
 		String userName = (String) session.getAttribute("username");
 		String password = (String) session.getAttribute("password");
 
@@ -61,7 +60,7 @@
 	<jsp:include page="header.jsp" />
 
 	<div class="text-center"
-		style="color: green; font-size: 24px; font-weight: bold;">Cart
+		style="color: #002651; font-size: 24px; font-weight: bold;">Cart
 		Items</div>
 	<!-- <script>document.getElementById('mycart').innerHTML='<i data-count="20" class="fa fa-shopping-cart fa-3x icon-white badge" style="background-color:#333;margin:0px;padding:0px; margin-top:5px;"></i>'</script>
  -->
@@ -134,7 +133,7 @@
 
 				<tr style="background-color: grey; color: white;">
 					<td colspan="6" style="text-align: center;">Total Amount to
-						Pay (in Rupees)</td>
+						Pay (in $)</td>
 					<td><%=totAmount%></td>
 				</tr>
 				<%
